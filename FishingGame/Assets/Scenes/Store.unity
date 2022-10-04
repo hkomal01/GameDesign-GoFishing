@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 453874992}
   - component: {fileID: 453874991}
   - component: {fileID: 453874993}
+  - component: {fileID: 453874994}
   m_Layer: 0
   m_Name: Rod5
   m_TagString: Rod5
@@ -337,6 +338,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &453874994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453874990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7071ac28cfc40309eb63ed2a9e97a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &614665067
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +361,7 @@ GameObject:
   - component: {fileID: 614665069}
   - component: {fileID: 614665068}
   - component: {fileID: 614665070}
+  - component: {fileID: 614665071}
   m_Layer: 0
   m_Name: Rod3
   m_TagString: Rod3
@@ -448,6 +462,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &614665071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614665067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7071ac28cfc40309eb63ed2a9e97a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &883812140
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +586,7 @@ GameObject:
   - component: {fileID: 941084395}
   - component: {fileID: 941084394}
   - component: {fileID: 941084396}
+  - component: {fileID: 941084397}
   m_Layer: 0
   m_Name: Rod2
   m_TagString: Rod2
@@ -660,6 +687,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &941084397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941084393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7071ac28cfc40309eb63ed2a9e97a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1211098473
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +807,7 @@ GameObject:
   - component: {fileID: 1320252164}
   - component: {fileID: 1320252163}
   - component: {fileID: 1320252165}
+  - component: {fileID: 1320252166}
   m_Layer: 0
   m_Name: Rod4
   m_TagString: Rod4
@@ -868,6 +908,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1320252166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320252162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7071ac28cfc40309eb63ed2a9e97a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1338284064
 GameObject:
   m_ObjectHideFlags: 0

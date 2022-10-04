@@ -6,6 +6,6 @@ public class ClickFunction : MonoBehaviour
 {
     void onMouseDown()
     {
-      print("Banana");
+      Debug.Log("Banana");
     }
 }
