@@ -18,9 +18,10 @@ public class fish_movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (fish.position.x + movement.x < -9)
+        if (fish.position.x + movement.x < -10)
         {
             movement.x = 16;
+            movement.y = fish.position.y;
             fish.MovePosition(movement);
 
         } else {
