@@ -39,5 +39,6 @@ public class PlayerController : MonoBehaviour
         } else {
           this.gameObject.GetComponent<SpriteRenderer>().sprite = IdleSprite;
         }
+        
     }
 }
