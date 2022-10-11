@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Money", 0);
         PlayerPrefs.SetFloat("Fish", 0);
+        PlayerPrefs.SetFloat("RodLevel", 1);
 
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
