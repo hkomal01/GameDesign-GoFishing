@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    public Sprite LeftSprite;
+    public Sprite RightSprite;
+    public Sprite IdleSprite;
 
     private float moveSpeedMultiplier;
     private float moveHorizontal;
@@ -23,10 +26,18 @@ public class PlayerController : MonoBehaviour
       // Left = -1, No keypress = 0, Right = 1
       moveHorizontal = Input.GetAxisRaw("Horizontal");
       moveVertical = Input.GetAxisRaw("Vertical");
+      
     }
 
     void FixedUpdate()
     {
-        rb2D.AddForce(new Vector2(moveHorizontal*moveSpeedMultiplier,moveVertical*moveSpeedMultiplier),ForceMode2D.Impulse);
+        rb2D.AddForce(new Vector2(moveHorizontal*moveSpeedMultiplier, moveVertical*moveSpeedMultiplier),ForceMode2D.Impulse);
+        if (moveHorizontal == 1) {
+          this.gameObject.GetComponent<SpriteRenderer>().sprite = RightSprite;
+        } else if (moveHorizontal == -1) {
+          this.gameObject.GetComponent<SpriteRenderer>().sprite = LeftSprite;
+        } else {
+          this.gameObject.GetComponent<SpriteRenderer>().sprite = IdleSprite;
+        }
     }
 }
