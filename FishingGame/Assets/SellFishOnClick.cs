@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SellFishOnClick : MonoBehaviour
 {
+    public GameHandler gameHandlerObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +20,7 @@ public class SellFishOnClick : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("Clicked Sell Fish");
-        float current_fish = PlayerPrefs.GetFloat("Fish");
-        if (current_fish > 0) {
-            PlayerPrefs.SetFloat("Fish", current_fish - 1);
-            PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
-        } else {
-            Debug.Log("You have no more fish to sell!!!!");
-        }
+        gameHandlerObj.SellFish();
+        
     }
 }

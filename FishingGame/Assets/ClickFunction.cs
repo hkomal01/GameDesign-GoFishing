@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClickFunction : MonoBehaviour
 {
+    public GameHandler gameHandlerObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +28,10 @@ public class ClickFunction : MonoBehaviour
     }
     public void OnMouseDown()
     {
-      Debug.Log("clicked");
-      Load();
+      
+      Debug.Log("clicked " + gameObject.tag);
+      // Load();
+      gameHandlerObj.BuyRod(gameObject.tag);
     }
 }
 

@@ -9,6 +9,7 @@ TagManager:
   - Rod3
   - Rod4
   - Rod5
+  - GameHandler
   layers:
   - Default
   - TransparentFX

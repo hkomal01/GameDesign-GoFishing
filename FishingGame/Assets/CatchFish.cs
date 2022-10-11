@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CatchFish : MonoBehaviour
 {
-     public void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("triggered!");
-        float current_fish = PlayerPrefs.GetFloat("Fish");
-        PlayerPrefs.SetFloat("Fish", current_fish + 1);
+    public GameHandler gameHandlerObj;
+    
+    public void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Catch Fish Triggered!");
+        gameHandlerObj.CatchFish();
+            
     }
 
     // Start is called before the first frame update
