@@ -32,6 +32,7 @@ public class GameHandler : MonoBehaviour
 
          if (Input.GetKey("escape")){
                 Application.Quit();
+                QuitGame();
         }
 
         if (isVisible) {
@@ -203,5 +204,11 @@ public class GameHandler : MonoBehaviour
     void UpdateMoney() {
         Text moneyTextB = moneyText.GetComponent<Text>();
         moneyTextB.text = "" + PlayerPrefs.GetFloat("Money");
+    }
+
+    public void QuitGame(){
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+
     }
 }
