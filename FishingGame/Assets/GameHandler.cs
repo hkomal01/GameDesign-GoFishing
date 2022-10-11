@@ -82,7 +82,9 @@ public class GameHandler : MonoBehaviour
                     PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 30);
                     PlayerPrefs.SetFloat("RodLevel", 2);
 
-                    Destroy(GameObject.FindWithTag(rodNum));
+                    // Destroy(GameObject.FindWithTag(rodNum));
+                    GameObject.FindWithTag(rodNum).SetActive(false);
+
                 } else {
                     Debug.Log("Not able to buy rod");
                     errorImg.SetActive(true);
