@@ -86,6 +86,7 @@ public class GameHandler : MonoBehaviour
                     Debug.Log("able to buy rod");
                     PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 30);
                     PlayerPrefs.SetFloat("RodLevel", 2);
+                    UpdateMoney();
 
                     // Destroy(GameObject.FindWithTag(rodNum));
                     GameObject.FindWithTag(rodNum).SetActive(false);
@@ -106,6 +107,7 @@ public class GameHandler : MonoBehaviour
                         Debug.Log("able to buy rod");
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 60);
                         PlayerPrefs.SetFloat("RodLevel", 3);
+                        UpdateMoney();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
@@ -132,6 +134,7 @@ public class GameHandler : MonoBehaviour
                         Debug.Log("able to buy rod");
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 90);
                         PlayerPrefs.SetFloat("RodLevel", 4);
+                        UpdateMoney();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
@@ -158,6 +161,7 @@ public class GameHandler : MonoBehaviour
                         Debug.Log("able to buy rod");
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 120);
                         PlayerPrefs.SetFloat("RodLevel", 5);
+                        UpdateMoney();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
