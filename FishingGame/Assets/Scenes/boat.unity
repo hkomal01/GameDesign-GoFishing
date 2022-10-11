@@ -626,6 +626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d972bc8cb75c64f1b9988ecc746c765f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftSprite: {fileID: 21300000, guid: c906bdf8ad05b48088691f4a87d437ba, type: 3}
+  RightSprite: {fileID: 21300000, guid: 5e1703ca6e97540de8f7a398f02f543a, type: 3}
+  IdleSprite: {fileID: 21300000, guid: 2e2e0c62544d54d328a7c7de3f7d8aae, type: 3}
 --- !u!114 &1282213510
 MonoBehaviour:
   m_ObjectHideFlags: 0
