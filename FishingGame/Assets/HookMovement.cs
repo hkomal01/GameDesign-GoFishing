@@ -9,7 +9,7 @@ public class HookMovement : MonoBehaviour
     private float startrotation;
     private float max_rot;
     private float speed = 8f;
-    private float jumpingPower = 16f;
+    public float jumpingPower = 4f;
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
     
