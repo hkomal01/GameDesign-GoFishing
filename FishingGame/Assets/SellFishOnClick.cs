@@ -20,7 +20,7 @@ public class SellFishOnClick : MonoBehaviour
     {
         Debug.Log("Clicked Sell Fish");
         float current_fish = PlayerPrefs.GetFloat("Fish");
-        if (current_fish > 1) {
+        if (current_fish > 0) {
             PlayerPrefs.SetFloat("Fish", current_fish - 1);
             PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
         } else {
