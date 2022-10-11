@@ -6,18 +6,15 @@ public class CatchFish : MonoBehaviour
 {
      public void OnTriggerEnter2D(Collider2D other){
         Debug.Log("triggered!");
-        float current_money = PlayerPrefs.GetFloat("money");
-        PlayerPrefs.SetFloat("money", current_money + 10);
+        float current_fish = PlayerPrefs.GetFloat("Fish");
+        PlayerPrefs.SetFloat("Fish", current_fish + 1);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("starting from CatchFish!");
-        if(!PlayerPrefs.HasKey("money"))
-        {
-            PlayerPrefs.SetFloat("money", 0);
-        }
+        
     }
 
     // Update is called once per frame

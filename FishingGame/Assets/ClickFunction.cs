@@ -7,10 +7,6 @@ public class ClickFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      if(!PlayerPrefs.HasKey("money"))
-        {
-            PlayerPrefs.SetFloat("money", 0);
-        }
 
 
     }
@@ -23,7 +19,7 @@ public class ClickFunction : MonoBehaviour
 
     public void Load()
     {
-      Debug.Log("Player has $" + PlayerPrefs.GetFloat("money"));
+      Debug.Log("Player has $" + PlayerPrefs.GetFloat("Money"));
     }
     public void OnMouseDown()
     {
