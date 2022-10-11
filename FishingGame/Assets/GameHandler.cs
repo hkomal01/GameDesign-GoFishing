@@ -29,6 +29,11 @@ public class GameHandler : MonoBehaviour
     }
 
     void Update() {
+
+         if (Input.GetKey("escape")){
+                Application.Quit();
+        }
+
         if (isVisible) {
             StopCoroutine(DelayErrorAway());
             StartCoroutine(DelayErrorAway());
