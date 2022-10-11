@@ -4185,7 +4185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5fffa668f7c470c8e6ef0ac7594714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: Boat
+  NextLevel: Store
 --- !u!1 &1592748322
 GameObject:
   m_ObjectHideFlags: 0
