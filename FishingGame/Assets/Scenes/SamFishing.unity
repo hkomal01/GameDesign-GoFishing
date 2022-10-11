@@ -4709,7 +4709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 226493029221756723, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: fish_speed
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
