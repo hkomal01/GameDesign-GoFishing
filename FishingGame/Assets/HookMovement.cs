@@ -20,6 +20,15 @@ public class HookMovement : MonoBehaviour
         max_rot = 45f;
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "fish")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {

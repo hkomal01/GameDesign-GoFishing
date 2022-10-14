@@ -10,6 +10,8 @@ TagManager:
   - Rod4
   - Rod5
   - GameHandler
+  - fish
+  - wall
   layers:
   - Default
   - TransparentFX
