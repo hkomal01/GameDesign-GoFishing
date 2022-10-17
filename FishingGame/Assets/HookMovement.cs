@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HookMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class HookMovement : MonoBehaviour
     public float jumpingPower = 4f;
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
+
+    private bool hasFish = false;
     
 
     private void Start()
@@ -20,11 +23,15 @@ public class HookMovement : MonoBehaviour
         max_rot = 45f;
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "fish")
         {
-            Destroy(other.gameObject);
+            hasFish = true;
+        }
+        if (other.gameObject.tag == "waterTop" && hasFish)
+        {
+            SceneManager.LoadScene("boat");
         }
     }
 
@@ -33,7 +40,11 @@ public class HookMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (hasFish)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 10f);
+        }
+        else if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
@@ -46,7 +57,7 @@ public class HookMovement : MonoBehaviour
     {
         float twist;
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        Vector2 movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+        Vector2 movementDirection = new Vector2(horizontal, 0);
         if (movementDirection != Vector2.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection * -1);

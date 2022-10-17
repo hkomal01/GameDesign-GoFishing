@@ -12,6 +12,8 @@ TagManager:
   - GameHandler
   - fish
   - wall
+  - hook
+  - waterTop
   layers:
   - Default
   - TransparentFX

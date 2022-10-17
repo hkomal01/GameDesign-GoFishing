@@ -5,10 +5,15 @@ using UnityEngine;
 public class CatchFish : MonoBehaviour
 {
     public GameHandler gameHandlerObj;
+
     
     public void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Catch Fish Triggered!");
-        gameHandlerObj.CatchFish();
+        if (other.gameObject.tag == "fish")
+        {
+            Debug.Log("Catch Fish Triggered!");
+            gameHandlerObj.CatchFish();
+            
+        }
             
     }
 
@@ -22,6 +27,6 @@ public class CatchFish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }

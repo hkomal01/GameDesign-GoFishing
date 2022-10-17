@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CameraPos : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject hook;
     //public float cameraHeight = 20.0f;
 
     void Update()
     {
-        Vector3 pos = player.transform.position;
-        //pos.z += cameraHeight;
+        Vector3 pos = hook.transform.position;
         pos.z = -20;
         transform.position = pos;
     }

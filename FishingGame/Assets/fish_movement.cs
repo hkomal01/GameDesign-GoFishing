@@ -5,10 +5,10 @@ using UnityEngine;
 public class fish_movement : MonoBehaviour
 {
     public float fish_speed = 5;
+    public GameObject hook;
     public Rigidbody2D fish;
-    public Rigidbody2D wall;
-    //public GameHandler gameHandlerObj;
 
+    private bool isCaught = false;
     private Vector2 movement;
     private Vector3 flip;
     // Update is called once per frame
@@ -25,7 +25,14 @@ public class fish_movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        fish.MovePosition(fish.position + movement * fish_speed * Time.fixedDeltaTime);
+        if (!isCaught){
+            fish.MovePosition(fish.position + movement * fish_speed * Time.fixedDeltaTime);
+        }else{
+            Vector3 pos = hook.transform.position;
+            pos.z = -5;
+            fish.transform.position = pos;
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,7 +45,15 @@ public class fish_movement : MonoBehaviour
             
             flip.x = flip.x * -1;
             fish.transform.localScale = flip;
-            //fish.MovePosition(fish.position + movement * fish_speed * Time.fixedDeltaTime);
+        }else if (other.gameObject.tag == "hook")
+        {
+            Debug.Log("Fish Hooked");
+            isCaught = true;
+            Vector3 pos = hook.transform.position;
+            pos.z = -5;
+            fish.transform.position = pos;
         }
     }
+
+
 }
