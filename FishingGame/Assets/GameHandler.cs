@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
-
 public class GameHandler : MonoBehaviour
 {
     public GameObject fishText;
     public GameObject moneyText;
+    public GameObject rodText;
     public GameObject errorText;
     public GameObject errorImg;
 
@@ -21,6 +20,7 @@ public class GameHandler : MonoBehaviour
     void Start() {
         UpdateFish();
         UpdateMoney();
+        UpdateRod();
         errorImg.SetActive(false);
         errorText.SetActive(false);
 
@@ -88,6 +88,7 @@ public class GameHandler : MonoBehaviour
                     PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 30);
                     PlayerPrefs.SetFloat("RodLevel", 2);
                     UpdateMoney();
+                    UpdateRod(); 
 
                     Destroy(GameObject.FindWithTag(rodNum));
                     //GameObject.FindWithTag(rodNum).SetActive(false);
@@ -109,6 +110,7 @@ public class GameHandler : MonoBehaviour
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 60);
                         PlayerPrefs.SetFloat("RodLevel", 3);
                         UpdateMoney();
+                        UpdateRod();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
@@ -136,6 +138,7 @@ public class GameHandler : MonoBehaviour
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 90);
                         PlayerPrefs.SetFloat("RodLevel", 4);
                         UpdateMoney();
+                        UpdateRod();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
@@ -163,6 +166,7 @@ public class GameHandler : MonoBehaviour
                         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 120);
                         PlayerPrefs.SetFloat("RodLevel", 5);
                         UpdateMoney();
+                        UpdateRod();
 
                         Destroy(GameObject.FindWithTag(rodNum));
                     } else {
@@ -204,6 +208,11 @@ public class GameHandler : MonoBehaviour
     void UpdateMoney() {
         Text moneyTextB = moneyText.GetComponent<Text>();
         moneyTextB.text = "" + PlayerPrefs.GetFloat("Money");
+    }
+
+    void UpdateRod() {
+        Text rodTextB = rodText.GetComponent<Text>();
+        rodTextB.text = "" + PlayerPrefs.GetFloat("RodLevel");
     }
 
     public void QuitGame(){
