@@ -24,16 +24,16 @@ public class GameHandler : MonoBehaviour
         errorImg.SetActive(false);
         errorText.SetActive(false);
 
-        if (PlayerPrefs.GetFloat("RodLevel") >= 2) {
+        if (PlayerPrefs.GetFloat("RodLevel") == 2) {
             GameObject.FindWithTag("Rod2").SetActive(false);
-        } else if (PlayerPrefs.GetFloat("RodLevel") >= 3) {
+        } else if (PlayerPrefs.GetFloat("RodLevel") == 3) {
             GameObject.FindWithTag("Rod2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
-        } else if (PlayerPrefs.GetFloat("RodLevel") >= 4) {
+        } else if (PlayerPrefs.GetFloat("RodLevel") == 4) {
             GameObject.FindWithTag("Rod2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
             GameObject.FindWithTag("Rod4").SetActive(false);
-        } else if (PlayerPrefs.GetFloat("RodLevel") >= 5) {
+        } else if (PlayerPrefs.GetFloat("RodLevel") == 5) {
             GameObject.FindWithTag("Rod2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
             GameObject.FindWithTag("Rod4").SetActive(false);
