@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &835749830347895492
+--- !u!1001 &8216733653010259105
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 226493029221756716, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Name
-      value: fish-lvl-one
+      value: fish Variant
       objectReference: {fileID: 0}
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +58,6 @@ PrefabInstance:
     - target: {fileID: 226493030019433898, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 028197830a3064619aaa51f39747d789, type: 3}
+      objectReference: {fileID: 21300000, guid: 7a61b6aa7a1464e1aad3aca4f3b288d1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}

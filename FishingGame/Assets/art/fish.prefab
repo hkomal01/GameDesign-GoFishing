@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish_speed: 3
+  hook: {fileID: 0}
   fish: {fileID: 226493029221756717}
 --- !u!61 &226493029221756720
 BoxCollider2D:
