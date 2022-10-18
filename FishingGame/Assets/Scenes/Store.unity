@@ -601,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishText: {fileID: 1631533745}
   moneyText: {fileID: 1302148709}
+  rodText: {fileID: 0}
   errorText: {fileID: 932579208}
   errorImg: {fileID: 1190335866}
   isVisible: 0
@@ -729,7 +730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &932579209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -886,7 +887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1190335867
 RectTransform:
   m_ObjectHideFlags: 0
