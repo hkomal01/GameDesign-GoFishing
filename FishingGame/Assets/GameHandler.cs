@@ -24,6 +24,22 @@ public class GameHandler : MonoBehaviour
         errorImg.SetActive(false);
         errorText.SetActive(false);
 
+        if (PlayerPrefs.GetFloat("RodLevel") >= 2) {
+            GameObject.FindWithTag("Rod2").SetActive(false);
+        } else if (PlayerPrefs.GetFloat("RodLevel") >= 3) {
+            GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.FindWithTag("Rod3").SetActive(false);
+        } else if (PlayerPrefs.GetFloat("RodLevel") >= 4) {
+            GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.FindWithTag("Rod3").SetActive(false);
+            GameObject.FindWithTag("Rod4").SetActive(false);
+        } else if (PlayerPrefs.GetFloat("RodLevel") >= 5) {
+            GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.FindWithTag("Rod3").SetActive(false);
+            GameObject.FindWithTag("Rod4").SetActive(false);
+            GameObject.FindWithTag("Rod5").SetActive(false);
+
+        }
 
 
     }
@@ -90,8 +106,10 @@ public class GameHandler : MonoBehaviour
                     UpdateMoney();
                     UpdateRod(); 
 
-                    Destroy(GameObject.FindWithTag(rodNum));
-                    //GameObject.FindWithTag(rodNum).SetActive(false);
+                    // Destroy(GameObject.FindWithTag(rodNum));
+
+                    GameObject.FindWithTag(rodNum).SetActive(false);
+                    Update();
 
                 } else {
                     Debug.Log("Not able to buy rod");
