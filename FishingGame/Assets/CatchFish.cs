@@ -8,10 +8,10 @@ public class CatchFish : MonoBehaviour
 
     
     public void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "fish")
+        if (other.gameObject.tag == "fish" || other.gameObject.tag == "fish_common")
         {
             Debug.Log("Catch Fish Triggered!");
-            gameHandlerObj.CatchFish();
+            gameHandlerObj.CatchFish(other.gameObject.tag);
             
         }
             

@@ -20,7 +20,7 @@ public class SellFishOnClick : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("Clicked Sell Fish");
-        gameHandlerObj.SellFish();
+        gameHandlerObj.SellFish(gameObject.tag);
         
     }
 }

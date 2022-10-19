@@ -14,6 +14,7 @@ TagManager:
   - wall
   - hook
   - waterTop
+  - fish_common
   layers:
   - Default
   - TransparentFX

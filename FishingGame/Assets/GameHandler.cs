@@ -60,28 +60,46 @@ public class GameHandler : MonoBehaviour
 
     
 
-    public void CatchFish() {
-        PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") + 1);
+    public void CatchFish(string tag) {
+        if (tag == "fish")
+            PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") + 1);
+        if (tag == "fish_common")
+            PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") + 1);
+
         UpdateFish();
     }
 
-    public void SellFish() {
-        
-        if (PlayerPrefs.GetFloat("Fish") > 0) {
-            PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") - 1);
-            PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
-        } else {
-            Debug.Log("Not able to sell fish");
-            errorImg.SetActive(true);
-            errorText.SetActive(true);
-            Text errorTextB = errorText.GetComponent<Text>();
-            errorTextB.text = "No more fish to sell. Go Fishing!!";
-            isVisible = true;
+    public void SellFish(string tag) {
+        if (tag == "fish") {
+            if (PlayerPrefs.GetFloat("Fish") > 0) {
+                PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") - 1);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
+            } else {
+                Debug.Log("Not able to sell fish");
+                errorImg.SetActive(true);
+                errorText.SetActive(true);
+                Text errorTextB = errorText.GetComponent<Text>();
+                errorTextB.text = "No more normal fish to sell. Go Fishing!!";
+                isVisible = true;
+            }
+        } else if (tag == "fish_common") {
+            if (PlayerPrefs.GetFloat("Fish_com") > 0) {
+                PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") - 1);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 5);
+            } else {
+                Debug.Log("Not able to sell fish");
+                errorImg.SetActive(true);
+                errorText.SetActive(true);
+                Text errorTextB = errorText.GetComponent<Text>();
+                errorTextB.text = "No more common fish to sell. Go Fishing!!";
+                isVisible = true;
+            }
         }
 
         UpdateFish();
         UpdateMoney();
     }
+
 
     public void Wait(int time) 
     {           
@@ -220,7 +238,7 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void UpdateFish() {
         Text fishTextB = fishText.GetComponent<Text>();
-        fishTextB.text = "" + PlayerPrefs.GetFloat("Fish");
+        fishTextB.text = "" + (PlayerPrefs.GetFloat("Fish") + PlayerPrefs.GetFloat("Fish_com"));
     }
 
     void UpdateMoney() {
