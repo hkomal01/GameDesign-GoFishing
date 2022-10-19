@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSpawner : MonoBehaviour
+public class SpawnFish : MonoBehaviour
 {
-
+    [System.Serializable];
     public class Wave 
     {
         public string name;
@@ -18,19 +18,11 @@ public class WaveSpawner : MonoBehaviour
     public Transform start_spawn;
     public Transform end_spawn;
 
-    public float timeBetweenWaves = 5f;
-    public float waveCountdown;
-
     void Start() {
 
         for (int i = 0; i < waves.Length; i++) {
             StartCoroutine (SpawnWave(waves[i]));
         }
-    }
-
-    void Update() {
-       
-
     }
 
     IEnumerator SpawnWave(Wave _wave) {
