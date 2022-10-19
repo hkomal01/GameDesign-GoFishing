@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish-lvl-one
       objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756717, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -54,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756723, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: fish_speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 226493030019433898, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Sprite

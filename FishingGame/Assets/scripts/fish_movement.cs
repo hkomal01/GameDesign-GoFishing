@@ -17,8 +17,8 @@ public class fish_movement : MonoBehaviour
         movement.x = -1;
         movement.y = 0;
 
-        flip.x = 2;
-        flip.y = 2;
+        flip.x = fish.transform.localScale.x;
+        flip.y = fish.transform.localScale.y;
         flip.z = 1;
 
     }

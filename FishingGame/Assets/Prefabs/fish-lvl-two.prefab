@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 226493029221756720}
   m_Layer: 0
   m_Name: fish-lvl-two
-  m_TagString: Untagged
+  m_TagString: fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 226493029221756716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.24, y: 0.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 226493030019433893}
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &226493029221756723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4895ffbcf7a940a1b6c639262b2a274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish_speed: 3
-  hook: {fileID: 0}
+  fish_speed: 10
+  hook: {fileID: 5362551995503689853, guid: de0136dc24ba845b7863bb77a881ce28, type: 3}
   fish: {fileID: 226493029221756717}
 --- !u!61 &226493029221756720
 BoxCollider2D:

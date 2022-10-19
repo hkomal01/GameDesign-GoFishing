@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnFish : MonoBehaviour
 {
-    [System.Serializable];
+    [System.Serializable]
+
     public class Wave 
     {
         public string name;
@@ -17,6 +18,7 @@ public class SpawnFish : MonoBehaviour
 
     public Transform start_spawn;
     public Transform end_spawn;
+
 
     void Start() {
 

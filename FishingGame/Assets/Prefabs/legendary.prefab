@@ -9,11 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 226493029221756716, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Name
-      value: fish Variant
+      value: legendary
       objectReference: {fileID: 0}
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,6 +62,14 @@ PrefabInstance:
     - target: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756723, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: hook
+      value: 
+      objectReference: {fileID: 5362551995503689853, guid: de0136dc24ba845b7863bb77a881ce28, type: 3}
+    - target: {fileID: 226493029221756723, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: fish_speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 226493030019433898, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Sprite
