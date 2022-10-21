@@ -26,18 +26,28 @@ public class GameHandler : MonoBehaviour
 
         if (PlayerPrefs.GetFloat("RodLevel") == 2) {
             GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.Find("Level2").SetActive(false);
         } else if (PlayerPrefs.GetFloat("RodLevel") == 3) {
             GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.Find("Level2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
+            GameObject.Find("Level3").SetActive(false);
         } else if (PlayerPrefs.GetFloat("RodLevel") == 4) {
             GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.Find("Level2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
+            GameObject.Find("Level3").SetActive(false);
             GameObject.FindWithTag("Rod4").SetActive(false);
+            GameObject.Find("Level3").SetActive(false);
         } else if (PlayerPrefs.GetFloat("RodLevel") == 5) {
             GameObject.FindWithTag("Rod2").SetActive(false);
+            GameObject.Find("Level2").SetActive(false);
             GameObject.FindWithTag("Rod3").SetActive(false);
+            GameObject.Find("Level3").SetActive(false);
             GameObject.FindWithTag("Rod4").SetActive(false);
+            GameObject.Find("Level4").SetActive(false);
             GameObject.FindWithTag("Rod5").SetActive(false);
+            GameObject.Find("Level5").SetActive(false);
 
         }
 
@@ -65,6 +75,8 @@ public class GameHandler : MonoBehaviour
             PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") + 1);
         if (tag == "fish_common")
             PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") + 1);
+        if (tag == "fish_3")
+            PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") + 1);
 
         UpdateFish();
     }
@@ -73,7 +85,7 @@ public class GameHandler : MonoBehaviour
         if (tag == "fish") {
             if (PlayerPrefs.GetFloat("Fish") > 0) {
                 PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") - 1);
-                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 10);
             } else {
                 Debug.Log("Not able to sell fish");
                 errorImg.SetActive(true);
@@ -92,6 +104,19 @@ public class GameHandler : MonoBehaviour
                 errorText.SetActive(true);
                 Text errorTextB = errorText.GetComponent<Text>();
                 errorTextB.text = "No more common fish to sell. Go Fishing!!";
+                isVisible = true;
+            }
+
+        }else if (tag == "fish_3") {
+            if (PlayerPrefs.GetFloat("Fish_3") > 0) {
+                PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") - 1);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
+            } else {
+                Debug.Log("Not able to sell fish");
+                errorImg.SetActive(true);
+                errorText.SetActive(true);
+                Text errorTextB = errorText.GetComponent<Text>();
+                errorTextB.text = "No more rare fish to sell. Go Fishing!!";
                 isVisible = true;
             }
         }
@@ -125,7 +150,7 @@ public class GameHandler : MonoBehaviour
                     UpdateRod(); 
 
                     // Destroy(GameObject.FindWithTag(rodNum));
-
+                    GameObject.Find("Level2").SetActive(false);
                     GameObject.FindWithTag(rodNum).SetActive(false);
                     Update();
 
@@ -148,7 +173,10 @@ public class GameHandler : MonoBehaviour
                         UpdateMoney();
                         UpdateRod();
 
-                        Destroy(GameObject.FindWithTag(rodNum));
+                        GameObject.Find("Level3").SetActive(false);
+                        GameObject.FindWithTag(rodNum).SetActive(false);
+                        Update();
+
                     } else {
                         Debug.Log("Not able to buy rod");
                         errorImg.SetActive(true);
@@ -176,7 +204,10 @@ public class GameHandler : MonoBehaviour
                         UpdateMoney();
                         UpdateRod();
 
-                        Destroy(GameObject.FindWithTag(rodNum));
+                        GameObject.Find("Level4").SetActive(false);
+                        GameObject.FindWithTag(rodNum).SetActive(false);
+                        Update();
+                        
                     } else {
                         Debug.Log("Not able to buy rod");
                         errorImg.SetActive(true);
@@ -204,7 +235,10 @@ public class GameHandler : MonoBehaviour
                         UpdateMoney();
                         UpdateRod();
 
-                        Destroy(GameObject.FindWithTag(rodNum));
+                        GameObject.Find("Level5").SetActive(false);
+                        GameObject.FindWithTag(rodNum).SetActive(false);
+                        Update();
+                        
                     } else {
                         Debug.Log("Not able to buy rod");
                         errorImg.SetActive(true);

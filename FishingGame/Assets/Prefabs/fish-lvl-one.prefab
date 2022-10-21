@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish-lvl-one
       objectReference: {fileID: 0}
+    - target: {fileID: 226493029221756716, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
+      propertyPath: m_TagString
+      value: fish_common
+      objectReference: {fileID: 0}
     - target: {fileID: 226493029221756717, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
       propertyPath: m_Constraints
       value: 4

@@ -25,7 +25,7 @@ public class HookMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "fish") || (other.gameObject.tag == "fish_common"))
+        if ((other.gameObject.tag == "fish") || (other.gameObject.tag == "fish_common") || other.gameObject.tag == "fish_3")
         {
             hasFish = true;
         }

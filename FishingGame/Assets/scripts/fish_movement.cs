@@ -39,7 +39,7 @@ public class fish_movement : MonoBehaviour
     {
         if (other.gameObject.tag == "wall")
         {
-            Debug.Log("Fish on wall");
+            // Debug.Log("Fish on wall");
             
             movement.x = movement.x * -1;
             
@@ -48,10 +48,12 @@ public class fish_movement : MonoBehaviour
         }else if (other.gameObject.tag == "hook")
         {
             Debug.Log("Fish Hooked");
+            Debug.Log("FISH name IS: " + fish.gameObject.name);
+
             isCaught = true;
             Vector3 pos = hook.transform.position;
             pos.z = -5;
-            fish.transform.position = pos;
+            fish.gameObject.transform.position = pos;
         }
     }
 

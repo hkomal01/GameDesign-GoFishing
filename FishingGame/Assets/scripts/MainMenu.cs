@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("Money", 0);
         PlayerPrefs.SetFloat("Fish", 0);
         PlayerPrefs.SetFloat("Fish_com", 0);
+        PlayerPrefs.SetFloat("Fish_3", 0);
+
 
         PlayerPrefs.SetFloat("RodLevel", 1);
 
