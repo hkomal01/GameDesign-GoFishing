@@ -38,7 +38,7 @@ public class GameHandler : MonoBehaviour
             GameObject.FindWithTag("Rod3").SetActive(false);
             GameObject.Find("Level3").SetActive(false);
             GameObject.FindWithTag("Rod4").SetActive(false);
-            GameObject.Find("Level3").SetActive(false);
+            GameObject.Find("Level4").SetActive(false);
         } else if (PlayerPrefs.GetFloat("RodLevel") == 5) {
             GameObject.FindWithTag("Rod2").SetActive(false);
             GameObject.Find("Level2").SetActive(false);
