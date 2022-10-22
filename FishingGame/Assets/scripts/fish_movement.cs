@@ -39,7 +39,6 @@ public class fish_movement : MonoBehaviour
     {
         if (other.gameObject.tag == "wall")
         {
-            // Debug.Log("Fish on wall");
             
             movement.x = movement.x * -1;
             

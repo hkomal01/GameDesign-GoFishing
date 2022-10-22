@@ -29,7 +29,11 @@ public class HookMovement : MonoBehaviour
         {
             hasFish = true;
         }
-        if (other.gameObject.tag == "waterTop" && hasFish)
+        //if (other.gameObject.tag == "waterTop" && hasFish)
+        //{
+        //    SceneManager.LoadScene("boat");
+        //}
+        if (other.gameObject.tag == "boot")
         {
             SceneManager.LoadScene("boat");
         }
