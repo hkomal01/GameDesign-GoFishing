@@ -16,6 +16,7 @@ TagManager:
   - waterTop
   - fish_common
   - fish_3
+  - boot
   layers:
   - Default
   - TransparentFX

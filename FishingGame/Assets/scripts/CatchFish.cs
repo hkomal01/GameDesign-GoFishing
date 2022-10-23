@@ -1,19 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CatchFish : MonoBehaviour
 {
     public GameHandler gameHandlerObj;
+
+    private bool hasFish;
+    private List<GameObject> fishCaught = new List<GameObject>();
 
     
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "fish" || other.gameObject.tag == "fish_common" 
             || other.gameObject.tag == "fish_3")
         {
-            Debug.Log("Catch Fish Triggered!");
-            gameHandlerObj.CatchFish(other.gameObject.tag);
+            Debug.Log("Has Fish");
+            hasFish = true;
+            //GameObject fish = Instantiate(other.gameObject);
+            fishCaught.Add(other.gameObject);
             
+        }
+        if (other.gameObject.tag == "waterTop" && hasFish)
+        {
+            Debug.Log("Catch Fish Triggered!");
+            for (int i = 0; i < fishCaught.Count; i++)
+            {
+                gameHandlerObj.CatchFish(fishCaught[i].tag);
+            }
+            SceneManager.LoadScene("boat");
         }
             
     }
@@ -22,6 +37,7 @@ public class CatchFish : MonoBehaviour
     void Start()
     {
         Debug.Log("starting from CatchFish!");
+        hasFish = false;
         
     }
 
