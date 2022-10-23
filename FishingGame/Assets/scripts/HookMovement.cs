@@ -50,6 +50,15 @@ public class HookMovement : MonoBehaviour
         //}
         if (other.gameObject.tag == "boot")
         {
+            if (PlayerPrefs.GetFloat("FishingSessionsRemaining") > 1)
+            {
+                PlayerPrefs.SetFloat("FishingSessionsRemaining", PlayerPrefs.GetFloat("FishingSessionsRemaining") - 1);
+            }
+            else
+            {
+                Debug.Log("You have fished the maximum number of times! You Lose!");
+                Application.Quit();
+            }
             SceneManager.LoadScene("boat");
         }
     }

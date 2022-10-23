@@ -11,9 +11,8 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("Fish", 0);
         PlayerPrefs.SetFloat("Fish_com", 0);
         PlayerPrefs.SetFloat("Fish_3", 0);
-
-
         PlayerPrefs.SetFloat("RodLevel", 1);
+        PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
 
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
