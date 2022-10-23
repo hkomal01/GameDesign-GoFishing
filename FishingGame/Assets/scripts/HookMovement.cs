@@ -11,6 +11,7 @@ public class HookMovement : MonoBehaviour
     private float max_rot;
     private float speed = 8f;
     public float jumpingPower = 4f;
+    public float num_fish_held = 0f;
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
 
@@ -28,6 +29,7 @@ public class HookMovement : MonoBehaviour
         if ((other.gameObject.tag == "fish") || (other.gameObject.tag == "fish_common") || other.gameObject.tag == "fish_3")
         {
             hasFish = true;
+            num_fish_held += 1;
         }
         //if (other.gameObject.tag == "waterTop" && hasFish)
         //{
@@ -46,7 +48,7 @@ public class HookMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         if (hasFish)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 10f);
+            rb.velocity = new Vector2(rb.velocity.x, 10f-num_fish_held);
         }
         else if (Input.GetButtonDown("Jump"))
         {
