@@ -48,7 +48,7 @@ public class HookMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         if (hasFish)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 10f-num_fish_held);
+            rb.velocity = new Vector2(rb.velocity.x, 10f/(Mathf.Sqrt(num_fish_held+2)));
         }
         else if (Input.GetButtonDown("Jump"))
         {
