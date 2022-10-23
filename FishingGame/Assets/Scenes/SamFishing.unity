@@ -3052,8 +3052,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1019190793
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d28960294a8a9cf46818c745a282bcd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5475,6 +5475,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2022284597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.25499344
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9660194
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.25846985
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407893, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 29.959
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833246969407895, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_Name
+      value: sign GO
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833247094853728, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833247094853728, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833247094853728, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.39353588
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833247094853728, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.02569355
+      objectReference: {fileID: 0}
+    - target: {fileID: 639833247094853759, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
+      propertyPath: m_text
+      value: Right and left arrow to move, up arrow to jump. Avoid the boots, catch
+        the fish!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
 --- !u!1 &2038535145
 GameObject:
   m_ObjectHideFlags: 0
