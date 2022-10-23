@@ -58,6 +58,10 @@ public class HookMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (num_fish_common_held + num_fish_held + num_fish_3_held > 4)
+        {
+            SceneManager.LoadScene("boat");
+        }
         horizontal = Input.GetAxisRaw("Horizontal");
         total_fish_weight_held = 1 * num_fish_common_held + 3 * num_fish_held + 5 * num_fish_3_held;
         if (hasFish)
