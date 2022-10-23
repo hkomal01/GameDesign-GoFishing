@@ -11,7 +11,10 @@ public class HookMovement : MonoBehaviour
     private float max_rot;
     private float speed = 8f;
     public float jumpingPower = 4f;
+    public float total_fish_weight_held = 0f;
     public float num_fish_held = 0f;
+    public float num_fish_common_held = 0f;
+    public float num_fish_3_held = 0f;
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
 
@@ -26,10 +29,20 @@ public class HookMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "fish") || (other.gameObject.tag == "fish_common") || other.gameObject.tag == "fish_3")
+        if (other.gameObject.tag == "fish")
         {
             hasFish = true;
             num_fish_held += 1;
+        }
+        else if (other.gameObject.tag == "fish_common")
+        {
+            hasFish = true;
+            num_fish_common_held += 1;
+        }
+        else if (other.gameObject.tag == "fish_3")
+        {
+            hasFish = true;
+            num_fish_3_held += 1;
         }
         //if (other.gameObject.tag == "waterTop" && hasFish)
         //{
@@ -46,9 +59,10 @@ public class HookMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        total_fish_weight_held = 1 * num_fish_common_held + 3 * num_fish_held + 5 * num_fish_3_held;
         if (hasFish)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 10f/(Mathf.Sqrt(num_fish_held+2)));
+            rb.velocity = new Vector2(rb.velocity.x, 10f/(Mathf.Sqrt(1 + total_fish_weight_held)));
         }
         else if (Input.GetButtonDown("Jump"))
         {
