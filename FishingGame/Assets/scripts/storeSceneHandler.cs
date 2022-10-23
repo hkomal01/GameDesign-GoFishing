@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-
-public class GameHandler : MonoBehaviour
+public class storeSceneHandler : MonoBehaviour
 {
     public GameObject fishText;
     public GameObject moneyText;
     public GameObject rodText;
     public GameObject errorText;
     public GameObject errorImg;
+    public GameObject optMenu;
+
 
     public bool isVisible = false;
 
-
-
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         UpdateFish();
         UpdateMoney();
         UpdateRod();
@@ -50,36 +51,42 @@ public class GameHandler : MonoBehaviour
             GameObject.Find("Level5").SetActive(false);
 
         }
-
+        
 
     }
 
-    void Update() {
-
-        if (Input.GetKey("escape")){
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if (Input.GetKeyDown("escape")){
                 Application.Quit();
                 QuitGame();
+        }
+
+        if (Input.GetKeyDown("o")) {
+            if (optMenu.activeInHierarchy) {
+                optMenu.SetActive(false);
+                resumeGame();
+            } else {
+                optMenu.SetActive(true);
+                pauseGame(); 
+            }
+        }  
+        if (Input.GetKeyDown("q")) {
+            SceneManager.LoadScene("menu");
+        }
+
+        if (Input.GetKeyDown("h")) {
+            SceneManager.LoadScene("Game");
         }
 
         if (isVisible) {
             StopCoroutine(DelayErrorAway());
             StartCoroutine(DelayErrorAway());
         }
-        
     }
 
-    
-
-    public void CatchFish(string tag) {
-        if (tag == "fish")
-            PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") + 1);
-        if (tag == "fish_common")
-            PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") + 1);
-        if (tag == "fish_3")
-            PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") + 1);
-
-        UpdateFish();
-    }
 
     public void SellFish(string tag) {
         if (tag == "fish") {
@@ -291,4 +298,13 @@ public class GameHandler : MonoBehaviour
         Application.Quit();
 
     }
+    
+    void pauseGame() {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame() {
+        Time.timeScale = 1;
+    }
+
 }
