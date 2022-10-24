@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameHandler : MonoBehaviour
@@ -11,6 +12,8 @@ public class GameHandler : MonoBehaviour
     public GameObject rodText;
     public GameObject errorText;
     public GameObject errorImg;
+    public GameObject optMenu;
+
 
     public bool isVisible = false;
 
@@ -61,10 +64,26 @@ public class GameHandler : MonoBehaviour
                 QuitGame();
         }
 
-        if (isVisible) {
-            StopCoroutine(DelayErrorAway());
-            StartCoroutine(DelayErrorAway());
+        if (Input.GetKeyDown("o")) {
+            if (optMenu.activeInHierarchy) {
+                optMenu.SetActive(false);
+                resumeGame();
+            } else {
+                optMenu.SetActive(true);
+                pauseGame(); 
+            }
+        }  
+        if (Input.GetKeyDown("q")) {
+            SceneManager.LoadScene("menu");
         }
+
+        if (Input.GetKeyDown("h")) {
+            SceneManager.LoadScene("Game");
+        }
+        // if (isVisible) {
+        //     StopCoroutine(DelayErrorAway());
+        //     StartCoroutine(DelayErrorAway());
+        // }
         
     }
 
@@ -77,6 +96,8 @@ public class GameHandler : MonoBehaviour
             PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") + 1);
         if (tag == "fish_3")
             PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") + 1);
+        if (tag == "fish_5")
+            PlayerPrefs.SetFloat("Fish_5", PlayerPrefs.GetFloat("Fish_5") + 1);
 
         UpdateFish();
     }
@@ -107,7 +128,7 @@ public class GameHandler : MonoBehaviour
                 isVisible = true;
             }
 
-        }else if (tag == "fish_3") {
+        } else if (tag == "fish_3") {
             if (PlayerPrefs.GetFloat("Fish_3") > 0) {
                 PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") - 1);
                 PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
@@ -117,6 +138,21 @@ public class GameHandler : MonoBehaviour
                 errorText.SetActive(true);
                 Text errorTextB = errorText.GetComponent<Text>();
                 errorTextB.text = "No more rare fish to sell. Go Fishing!!";
+                isVisible = true;
+            }
+        } else if (tag == "fish_5") {
+            if (PlayerPrefs.GetFloat("Fish_5") > 0) {
+                PlayerPrefs.SetFloat("Fish_5", PlayerPrefs.GetFloat("Fish_5") - 1);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 200);
+                UpdateFish();
+                UpdateMoney();
+                SceneManager.LoadScene("GameWon");
+            } else {
+                Debug.Log("Not able to sell fish");
+                errorImg.SetActive(true);
+                errorText.SetActive(true);
+                Text errorTextB = errorText.GetComponent<Text>();
+                errorTextB.text = "No more legendary fish to sell. Go Fishing!!";
                 isVisible = true;
             }
         }
@@ -273,7 +309,7 @@ public class GameHandler : MonoBehaviour
     void UpdateFish() {
         Text fishTextB = fishText.GetComponent<Text>();
         fishTextB.text = "" + (PlayerPrefs.GetFloat("Fish") + PlayerPrefs.GetFloat("Fish_com")
-                                + PlayerPrefs.GetFloat("Fish_3"));
+                                + PlayerPrefs.GetFloat("Fish_3") + PlayerPrefs.GetFloat("Fish_5"));
     }
 
     void UpdateMoney() {
@@ -290,5 +326,13 @@ public class GameHandler : MonoBehaviour
         // UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
 
+    }
+
+    void pauseGame() {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame() {
+        Time.timeScale = 1;
     }
 }

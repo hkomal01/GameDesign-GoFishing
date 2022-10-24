@@ -17,6 +17,7 @@ TagManager:
   - fish_common
   - fish_3
   - boot
+  - fish_5
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,8 @@ public class HookMovement : MonoBehaviour
     public float num_fish_held = 0f;
     public float num_fish_common_held = 0f;
     public float num_fish_3_held = 0f;
+    public float num_fish_5_held = 0f;
+
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
 
@@ -43,6 +45,11 @@ public class HookMovement : MonoBehaviour
         {
             hasFish = true;
             num_fish_3_held += 1;
+        }
+        else if (other.gameObject.tag == "fish_5")
+        {
+            hasFish = true;
+            num_fish_5_held += 1;
         }
         //if (other.gameObject.tag == "waterTop" && hasFish)
         //{

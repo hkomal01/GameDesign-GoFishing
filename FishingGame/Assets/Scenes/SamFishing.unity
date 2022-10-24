@@ -2397,25 +2397,25 @@ MonoBehaviour:
   - name: fish-lvl-1
     enemy: {fileID: 629804929693244918, guid: 8cf18a14950c7411197a3cf1d8e0e0f7, type: 3}
     obj: {fileID: 137538953}
-    count: 35
+    count: 0
     rate: 50
     start_spawn: {fileID: 1418823480}
   - name: fish-lvl-2-1
     enemy: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
     obj: {fileID: 1506621448}
-    count: 15
+    count: 0
     rate: 40
     start_spawn: {fileID: 455803908}
   - name: fish-lvl-2-2
     enemy: {fileID: 1848992603}
     obj: {fileID: 1848992599}
-    count: 15
+    count: 0
     rate: 40
     start_spawn: {fileID: 455803908}
   - name: fish-lvl-3
     enemy: {fileID: 1081840400}
     obj: {fileID: 1081840396}
-    count: 10
+    count: 0
     rate: 40
     start_spawn: {fileID: 742809265}
   - name: fish-lvl-5
@@ -2906,7 +2906,7 @@ GameObject:
   - component: {fileID: 630954365}
   m_Layer: 0
   m_Name: fish-five
-  m_TagString: fish_3
+  m_TagString: fish_5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3267,6 +3267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799002753}
   - component: {fileID: 799002754}
+  - component: {fileID: 799002755}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: GameHandler
@@ -3296,7 +3297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799002751}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e4c21211ce874df4a0da799fa2bac61, type: 3}
   m_Name: 
@@ -3305,6 +3306,25 @@ MonoBehaviour:
   moneyText: {fileID: 1194211986}
   rodText: {fileID: 627617776}
   optMenu: {fileID: 1739809560}
+--- !u!114 &799002755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799002751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505e6a433263d4ac191aef2d60b1267a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishText: {fileID: 990419267}
+  moneyText: {fileID: 1194211986}
+  rodText: {fileID: 627617776}
+  errorText: {fileID: 0}
+  errorImg: {fileID: 0}
+  optMenu: {fileID: 1739809560}
+  isVisible: 0
 --- !u!1 &801661227
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,7 +7145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739809561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8388,7 +8408,7 @@ PrefabInstance:
     - target: {fileID: 5362551995503689850, guid: de0136dc24ba845b7863bb77a881ce28, type: 3}
       propertyPath: gameHandlerObj
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 799002755}
     - target: {fileID: 5362551995503689853, guid: de0136dc24ba845b7863bb77a881ce28, type: 3}
       propertyPath: m_Name
       value: samHook

@@ -7,12 +7,16 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame ()
     {
-        PlayerPrefs.SetFloat("Money", 0);
-        PlayerPrefs.SetFloat("Fish", 0);
-        PlayerPrefs.SetFloat("Fish_com", 0);
-        PlayerPrefs.SetFloat("Fish_3", 0);
-        PlayerPrefs.SetFloat("RodLevel", 1);
-        PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
+        // if (!PlayerPrefs.HasKey("Money")) {
+            PlayerPrefs.SetFloat("Money", 0);
+            PlayerPrefs.SetFloat("Fish", 0);
+            PlayerPrefs.SetFloat("Fish_com", 0);
+            PlayerPrefs.SetFloat("Fish_3", 0);
+            PlayerPrefs.SetFloat("Fish_5", 0);
+
+            PlayerPrefs.SetFloat("RodLevel", 1);
+            PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
+        // }
 
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

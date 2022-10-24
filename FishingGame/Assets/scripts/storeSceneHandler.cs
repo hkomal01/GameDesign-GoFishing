@@ -114,7 +114,7 @@ public class storeSceneHandler : MonoBehaviour
                 isVisible = true;
             }
 
-        }else if (tag == "fish_3") {
+        } else if (tag == "fish_3") {
             if (PlayerPrefs.GetFloat("Fish_3") > 0) {
                 PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") - 1);
                 PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 15);
@@ -124,6 +124,18 @@ public class storeSceneHandler : MonoBehaviour
                 errorText.SetActive(true);
                 Text errorTextB = errorText.GetComponent<Text>();
                 errorTextB.text = "No more rare fish to sell. Go Fishing!!";
+                isVisible = true;
+            }
+        } else if (tag == "fish_5") {
+            if (PlayerPrefs.GetFloat("Fish_5") > 0) {
+                PlayerPrefs.SetFloat("Fish_5", PlayerPrefs.GetFloat("Fish_5") - 1);
+                PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + 200);
+            } else {
+                Debug.Log("Not able to sell fish");
+                errorImg.SetActive(true);
+                errorText.SetActive(true);
+                Text errorTextB = errorText.GetComponent<Text>();
+                errorTextB.text = "No more legendary fish to sell. Go Fishing!!";
                 isVisible = true;
             }
         }
@@ -280,7 +292,7 @@ public class storeSceneHandler : MonoBehaviour
     void UpdateFish() {
         Text fishTextB = fishText.GetComponent<Text>();
         fishTextB.text = "" + (PlayerPrefs.GetFloat("Fish") + PlayerPrefs.GetFloat("Fish_com")
-                                + PlayerPrefs.GetFloat("Fish_3"));
+                                + PlayerPrefs.GetFloat("Fish_3") + PlayerPrefs.GetFloat("Fish_5"));
     }
 
     void UpdateMoney() {

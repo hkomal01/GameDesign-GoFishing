@@ -46,7 +46,7 @@ public class GameSceneHandler : MonoBehaviour
     void UpdateFish() {
         Text fishTextB = fishText.GetComponent<Text>();
         fishTextB.text = "" + (PlayerPrefs.GetFloat("Fish") + PlayerPrefs.GetFloat("Fish_com")
-                                + PlayerPrefs.GetFloat("Fish_3"));
+                                + PlayerPrefs.GetFloat("Fish_3") + PlayerPrefs.GetFloat("Fish_5"));
     }
 
     void UpdateMoney() {
