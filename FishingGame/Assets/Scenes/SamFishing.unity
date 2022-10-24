@@ -2397,25 +2397,25 @@ MonoBehaviour:
   - name: fish-lvl-1
     enemy: {fileID: 629804929693244918, guid: 8cf18a14950c7411197a3cf1d8e0e0f7, type: 3}
     obj: {fileID: 137538953}
-    count: 0
+    count: 35
     rate: 50
     start_spawn: {fileID: 1418823480}
   - name: fish-lvl-2-1
     enemy: {fileID: 226493029221756722, guid: 6483d1c9e012644f8b9096ed1ac80aa2, type: 3}
     obj: {fileID: 1506621448}
-    count: 0
+    count: 15
     rate: 40
     start_spawn: {fileID: 455803908}
   - name: fish-lvl-2-2
     enemy: {fileID: 1848992603}
     obj: {fileID: 1848992599}
-    count: 0
+    count: 15
     rate: 40
     start_spawn: {fileID: 455803908}
   - name: fish-lvl-3
     enemy: {fileID: 1081840400}
     obj: {fileID: 1081840396}
-    count: 0
+    count: 10
     rate: 40
     start_spawn: {fileID: 742809265}
   - name: fish-lvl-5

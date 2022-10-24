@@ -13,6 +13,8 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("Fish_com", 0);
             PlayerPrefs.SetFloat("Fish_3", 0);
             PlayerPrefs.SetFloat("Fish_5", 0);
+            PlayerPrefs.SetFloat("Timer", 0.0f);
+
 
             PlayerPrefs.SetFloat("RodLevel", 1);
             PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
