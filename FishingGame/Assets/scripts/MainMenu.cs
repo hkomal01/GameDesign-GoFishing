@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
 
             PlayerPrefs.SetFloat("RodLevel", 1);
-            PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
+            // PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
         // }
 
 
