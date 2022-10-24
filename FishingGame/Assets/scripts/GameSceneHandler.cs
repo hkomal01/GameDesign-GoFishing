@@ -10,7 +10,10 @@ public class GameSceneHandler : MonoBehaviour
     public GameObject fishText;
     public GameObject moneyText;
     public GameObject rodText;
+    public GameObject timerText;
     public GameObject optMenu;
+
+    float timer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +21,18 @@ public class GameSceneHandler : MonoBehaviour
         UpdateFish();
         UpdateMoney();
         UpdateRod();
+        timer = PlayerPrefs.GetFloat("Timer");
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        UpdateTime();
+        if (Mathf.FloorToInt(timer / 60.0f) == 15) {
+            SceneManager.LoadScene("GameLose");
+        }
+
         if (Input.GetKeyDown("escape")){
                 Application.Quit();
                 QuitGame();
@@ -41,6 +51,16 @@ public class GameSceneHandler : MonoBehaviour
             SceneManager.LoadScene("menu");
         }
         
+    }
+
+    void UpdateTime() {
+        PlayerPrefs.SetFloat("Timer", timer);
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+
+        Text timerTextB = timerText.GetComponent<Text>();
+        timerTextB.text = string.Format("{0:00}:{1:00}", 14 - minutes, 59 - seconds);
+
     }
 
     void UpdateFish() {

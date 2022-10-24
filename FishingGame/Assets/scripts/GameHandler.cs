@@ -12,10 +12,13 @@ public class GameHandler : MonoBehaviour
     public GameObject rodText;
     public GameObject errorText;
     public GameObject errorImg;
+    public GameObject timerText;
     public GameObject optMenu;
 
 
     public bool isVisible = false;
+    float timer = 0.0f;
+
 
 
 
@@ -24,6 +27,7 @@ public class GameHandler : MonoBehaviour
         UpdateFish();
         UpdateMoney();
         UpdateRod();
+        timer = PlayerPrefs.GetFloat("Timer");
         errorImg.SetActive(false);
         errorText.SetActive(false);
 
@@ -57,7 +61,13 @@ public class GameHandler : MonoBehaviour
 
     }
 
-    void Update() {
+    void Update() 
+    {
+        timer += Time.deltaTime;
+        UpdateTime();
+        if (Mathf.FloorToInt(timer / 60.0f) == 15) {
+            SceneManager.LoadScene("GameLose");
+        }
 
         if (Input.GetKey("escape")){
                 Application.Quit();
@@ -80,11 +90,20 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown("h")) {
             SceneManager.LoadScene("Game");
         }
-        // if (isVisible) {
-        //     StopCoroutine(DelayErrorAway());
-        //     StartCoroutine(DelayErrorAway());
-        // }
+        if (isVisible) {
+            StopCoroutine(DelayErrorAway());
+            StartCoroutine(DelayErrorAway());
+        }
         
+    }
+
+    void UpdateTime() {
+        PlayerPrefs.SetFloat("Timer", timer);
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+
+        Text timerTextB = timerText.GetComponent<Text>();
+        timerTextB.text = string.Format("{0:00}:{1:00}", 14 - minutes, 59 - seconds);
     }
 
     
