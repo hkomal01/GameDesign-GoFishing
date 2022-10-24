@@ -13,6 +13,7 @@ public class boatSceneHandler : MonoBehaviour
     public GameObject rodText;
     public GameObject timerText;
     public GameObject optMenu;
+    public GameObject textF;
     float timer = 0.0f;
 
 
@@ -43,9 +44,11 @@ public class boatSceneHandler : MonoBehaviour
         if (Input.GetKeyDown("o")) {
             if (optMenu.activeInHierarchy) {
                 optMenu.SetActive(false);
+                textF.SetActive(true);
                 resumeGame();
             } else {
                 optMenu.SetActive(true);
+                textF.SetActive(false);
                 pauseGame(); 
             }
         }  
