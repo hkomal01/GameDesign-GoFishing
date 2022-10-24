@@ -28,15 +28,15 @@ public class CatchFish : MonoBehaviour
             {
                 gameHandlerObj.CatchFish(fishCaught[i].tag);
             }
-            if (PlayerPrefs.GetFloat("FishingSessionsRemaining") > 1)
-            {
-                PlayerPrefs.SetFloat("FishingSessionsRemaining", PlayerPrefs.GetFloat("FishingSessionsRemaining") - 1);
-            }
-            else
-            {
-                Debug.Log("You have fished the maximum number of times! You Lose!");
-                Application.Quit();
-            }
+            // if (PlayerPrefs.GetFloat("FishingSessionsRemaining") > 1)
+            // {
+            //     PlayerPrefs.SetFloat("FishingSessionsRemaining", PlayerPrefs.GetFloat("FishingSessionsRemaining") - 1);
+            // }
+            // else
+            // {
+            //     Debug.Log("You have fished the maximum number of times! You Lose!");
+            //     Application.Quit();
+            // }
             SceneManager.LoadScene("boat");
         }
             
