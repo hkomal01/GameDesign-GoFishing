@@ -79,7 +79,7 @@ public class HookMovement : MonoBehaviour
             SceneManager.LoadScene("boat");
         }
         horizontal = Input.GetAxisRaw("Horizontal");
-        total_fish_weight_held = 1 * num_fish_common_held + 3 * num_fish_held + 5 * num_fish_3_held;
+        total_fish_weight_held = 1 * num_fish_common_held + 3 * num_fish_held + 5 * num_fish_3_held + 7 * num_fish_5_held;
         if (hasFish)
         {
             rb.velocity = new Vector2(rb.velocity.x, 10f/(Mathf.Sqrt(1 + total_fish_weight_held)));
