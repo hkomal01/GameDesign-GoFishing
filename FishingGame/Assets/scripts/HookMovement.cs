@@ -16,6 +16,7 @@ public class HookMovement : MonoBehaviour
     public float num_fish_common_held = 0f;
     public float num_fish_3_held = 0f;
     public float num_fish_5_held = 0f;
+    float total_fish_held = 0f;
 
     public Rigidbody2D rb;
     [SerializeField] private float rotationSpeed;
@@ -35,21 +36,25 @@ public class HookMovement : MonoBehaviour
         {
             hasFish = true;
             num_fish_held += 1;
+            total_fish_held += 1;
         }
         else if (other.gameObject.tag == "fish_common")
         {
             hasFish = true;
             num_fish_common_held += 1;
+            total_fish_held += 1;
         }
         else if (other.gameObject.tag == "fish_3")
         {
             hasFish = true;
             num_fish_3_held += 1;
+            total_fish_held += 1;
         }
         else if (other.gameObject.tag == "fish_5")
         {
             hasFish = true;
             num_fish_5_held += 1;
+            total_fish_held += 1;
         }
         //if (other.gameObject.tag == "waterTop" && hasFish)
         //{
@@ -74,12 +79,20 @@ public class HookMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (num_fish_common_held + num_fish_held + num_fish_3_held > 4)
-        {
-            SceneManager.LoadScene("boat");
+       
+
+        float total_fish_weight_held = 1 * num_fish_common_held + 1 * num_fish_held + 1.5f * num_fish_3_held + 3 * num_fish_5_held;
+        float fish_on_hook_max = PlayerPrefs.GetFloat("RodLevel") + 4;
+        
+        if (total_fish_held > fish_on_hook_max) {
+            Debug.Log("total fish is: " + total_fish_held.ToString("R"));
+            Debug.Log("max fish hook is: " + fish_on_hook_max.ToString("R"));
+
+            SceneManager.LoadScene("boat");  
         }
+            
         horizontal = Input.GetAxisRaw("Horizontal");
-        total_fish_weight_held = 1 * num_fish_common_held + 3 * num_fish_held + 5 * num_fish_3_held + 7 * num_fish_5_held;
+
         if (hasFish)
         {
             rb.velocity = new Vector2(rb.velocity.x, 10f/(Mathf.Sqrt(1 + total_fish_weight_held)));
