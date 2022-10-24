@@ -17,6 +17,8 @@ public class GameHandler : MonoBehaviour
 
 
     public bool isVisible = false;
+    public bool isVisible2 = false;
+
     float timer = 0.0f;
 
 
@@ -93,6 +95,10 @@ public class GameHandler : MonoBehaviour
         if (isVisible) {
             StopCoroutine(DelayErrorAway());
             StartCoroutine(DelayErrorAway());
+        }
+        if (isVisible2) {
+            StopCoroutine(DelayErrorFishAway());
+            StartCoroutine(DelayErrorFishAway());
         }
         
     }
@@ -316,12 +322,39 @@ public class GameHandler : MonoBehaviour
         }
     }
 
+    public void boatError() {
+        // pauseGame();
+        errorImg.SetActive(true);
+        errorText.SetActive(true);
+        Text errorTextB = errorText.GetComponent<Text>();
+        errorTextB.text = "Avoid catching boots!";
+        isVisible2 = true;
+
+    }
+
+    public void fishError() {
+        // pauseGame();
+        errorImg.SetActive(true);
+        errorText.SetActive(true);
+        Text errorTextB = errorText.GetComponent<Text>();
+        errorTextB.text = "Too many fish on your hook! All fish escaped";
+        isVisible2 = true;
+    }
+
+    IEnumerator DelayErrorFishAway() {
+        yield return new WaitForSeconds(2f);
+        isVisible2 = false;
+        errorText.SetActive(false);
+        errorImg.SetActive(false);
+        // resumeGame();
+        SceneManager.LoadScene("boat");  
+    }
+
     IEnumerator DelayErrorAway() {
         yield return new WaitForSeconds(2f);
         isVisible = false;
         errorText.SetActive(false);
-        errorImg.SetActive(false);
-
+        errorImg.SetActive(false); 
     }
 
     // Update is called once per frame

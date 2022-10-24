@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class HookMovement : MonoBehaviour
 {
+    public GameHandler gameHandlerObj;
+
     private float horizontal;
     private float startrotation;
     private float max_rot;
@@ -71,7 +73,9 @@ public class HookMovement : MonoBehaviour
             //     Debug.Log("You have fished the maximum number of times! You Lose!");
             //     Application.Quit();
             // }
-            SceneManager.LoadScene("boat");
+            rb.velocity = new Vector2(rb.velocity.x, 4.75f);
+            gameHandlerObj.boatError();
+            // SceneManager.LoadScene("boat");
         }
     }
 
@@ -87,8 +91,10 @@ public class HookMovement : MonoBehaviour
         if (total_fish_held > fish_on_hook_max) {
             Debug.Log("total fish is: " + total_fish_held.ToString("R"));
             Debug.Log("max fish hook is: " + fish_on_hook_max.ToString("R"));
-
-            SceneManager.LoadScene("boat");  
+            
+            rb.velocity = new Vector2(rb.velocity.x, 4.75f);
+            gameHandlerObj.fishError();
+            // SceneManager.LoadScene("boat");  
         }
             
         horizontal = Input.GetAxisRaw("Horizontal");
