@@ -85,7 +85,7 @@ public class HookMovement : MonoBehaviour
     {
        
 
-        float total_fish_weight_held = 1 * num_fish_common_held + 1 * num_fish_held + 1.5f * num_fish_3_held + 3 * num_fish_5_held;
+        float total_fish_weight_held = 0.5f * num_fish_common_held + 0.75f * num_fish_held + 1f * num_fish_3_held + 1.5f * num_fish_5_held;
         float fish_on_hook_max = PlayerPrefs.GetFloat("RodLevel") + 4;
         
         if (total_fish_held > fish_on_hook_max) {
