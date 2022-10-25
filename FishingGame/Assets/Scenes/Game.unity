@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 639833247094853759, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
       propertyPath: m_text
-      value: Press 'o' to bring up the options manu, and see game controls
+      value: Press 'o' to bring up the options menu, and see game controls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
