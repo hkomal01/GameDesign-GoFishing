@@ -15,9 +15,13 @@ public class gameWon : MonoBehaviour
     private int rareCount;
     public GameObject legendaryText;
     private int legendaryCount;
+    public GameObject timeText;
+
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
+        timer = PlayerPrefs.GetFloat("Timer");
         getCounts();
     }
 
@@ -36,6 +40,14 @@ public class gameWon : MonoBehaviour
         legendaryCount = (int)PlayerPrefs.GetFloat("Fish_5Count");
         Text legendary = legendaryText.GetComponent<Text>();
         legendary.text += legendaryCount;
+
+
+        
+        int minutes = Mathf.FloorToInt(timer / 60.0f);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+
+        Text timerTextB = timeText.GetComponent<Text>();
+        timerTextB.text = string.Format("{0:00}:{1:00}", 14 - minutes, 59 - seconds);
     }
 
     public void PlayAgain() {
