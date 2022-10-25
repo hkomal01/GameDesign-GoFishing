@@ -270,9 +270,9 @@ public class GameHandler : MonoBehaviour
                 break;
             case "Rod4":
                 if (PlayerPrefs.GetFloat("RodLevel") == 3) {
-                    if (PlayerPrefs.GetFloat("Money") >= 90) {
+                    if (PlayerPrefs.GetFloat("Money") >= 100) {
                         Debug.Log("able to buy rod");
-                        PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 90);
+                        PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 100);
                         PlayerPrefs.SetFloat("RodLevel", 4);
                         UpdateMoney();
                         UpdateRod();
@@ -301,9 +301,9 @@ public class GameHandler : MonoBehaviour
                 break;
             case "Rod5":
                 if (PlayerPrefs.GetFloat("RodLevel") == 4) {
-                    if (PlayerPrefs.GetFloat("Money") >= 120) {
+                    if (PlayerPrefs.GetFloat("Money") >= 175) {
                         Debug.Log("able to buy rod");
-                        PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 120);
+                        PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") - 175);
                         PlayerPrefs.SetFloat("RodLevel", 5);
                         UpdateMoney();
                         UpdateRod();
