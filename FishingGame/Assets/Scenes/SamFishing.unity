@@ -8082,7 +8082,7 @@ PrefabInstance:
     - target: {fileID: 639833247094853759, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
       propertyPath: m_text
       value: Right and left arrow to move, up arrow to jump. Avoid the boots, careful
-        not to catch too many.
+        not to catch too many fish.
       objectReference: {fileID: 0}
     - target: {fileID: 639833247094853759, guid: 3de26841e904147c99d1e608ed0804ef, type: 3}
       propertyPath: m_fontSize
