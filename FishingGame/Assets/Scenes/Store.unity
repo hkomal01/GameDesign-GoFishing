@@ -1539,6 +1539,7 @@ MonoBehaviour:
   timerText: {fileID: 901255346}
   optMenu: {fileID: 2047052334}
   isVisible: 0
+  isVisible2: 0
 --- !u!114 &859358828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,7 +2789,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -456.2, y: 288}
-  m_SizeDelta: {x: 45, y: 30}
+  m_SizeDelta: {x: 55, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302148711
 MonoBehaviour:
@@ -2823,7 +2824,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 000
+  m_Text: 0000
 --- !u!222 &1302148712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4457,8 +4458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -502, y: 288}
-  m_SizeDelta: {x: 140, y: 40}
+  m_AnchoredPosition: {x: -500, y: 288}
+  m_SizeDelta: {x: 145, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822025733
 MonoBehaviour:
