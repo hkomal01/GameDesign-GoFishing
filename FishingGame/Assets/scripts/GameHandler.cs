@@ -116,13 +116,25 @@ public class GameHandler : MonoBehaviour
 
     public void CatchFish(string tag) {
         if (tag == "fish")
+        {
             PlayerPrefs.SetFloat("Fish", PlayerPrefs.GetFloat("Fish") + 1);
+            PlayerPrefs.SetFloat("FishCount", PlayerPrefs.GetFloat("FishCount") + 1);
+        }
         if (tag == "fish_common")
+        {
             PlayerPrefs.SetFloat("Fish_com", PlayerPrefs.GetFloat("Fish_com") + 1);
+            PlayerPrefs.SetFloat("Fish_comCount", PlayerPrefs.GetFloat("Fish_comCount") + 1);
+        }
         if (tag == "fish_3")
+        {
             PlayerPrefs.SetFloat("Fish_3", PlayerPrefs.GetFloat("Fish_3") + 1);
+            PlayerPrefs.SetFloat("Fish_3Count", PlayerPrefs.GetFloat("Fish_3Count") + 1);
+        }
         if (tag == "fish_5")
+        {
             PlayerPrefs.SetFloat("Fish_5", PlayerPrefs.GetFloat("Fish_5") + 1);
+            PlayerPrefs.SetFloat("Fish_5Count", PlayerPrefs.GetFloat("Fish_5Count") + 1);
+        }
 
         UpdateFish();
     }

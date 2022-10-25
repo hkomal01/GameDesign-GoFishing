@@ -10,11 +10,15 @@ public class MainMenu : MonoBehaviour
         // if (!PlayerPrefs.HasKey("Money")) {
             PlayerPrefs.SetFloat("Money", 0);
             PlayerPrefs.SetFloat("Fish", 0);
+            PlayerPrefs.SetFloat("FishCount", 0);
             PlayerPrefs.SetFloat("Fish_com", 0);
+            PlayerPrefs.SetFloat("Fish_comCount", 0);
             PlayerPrefs.SetFloat("Fish_3", 0);
+            PlayerPrefs.SetFloat("Fish_3Count", 0);
             PlayerPrefs.SetFloat("Fish_5", 0);
+            PlayerPrefs.SetFloat("Fish_5Count", 0);
             PlayerPrefs.SetFloat("Timer", 0.0f);
-
+            
 
             PlayerPrefs.SetFloat("RodLevel", 1);
             // PlayerPrefs.SetFloat("FishingSessionsRemaining", 5);
