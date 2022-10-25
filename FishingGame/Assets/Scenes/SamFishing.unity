@@ -2422,14 +2422,14 @@ MonoBehaviour:
   - name: fish-lvl-3
     enemy: {fileID: 1081840400}
     obj: {fileID: 1081840396}
-    count: 10
+    count: 15
     rate: 40
     start_spawn: {fileID: 742809265}
   - name: fish-lvl-5
     enemy: {fileID: 8152387843574068115, guid: 1dca6079dbb3946cbbfd8e895a8b7906, type: 3}
     obj: {fileID: 630954364}
     count: 1
-    rate: 1
+    rate: 10
     start_spawn: {fileID: 378679498}
   end_spawn: {fileID: 2097684551}
 --- !u!4 &522805180
