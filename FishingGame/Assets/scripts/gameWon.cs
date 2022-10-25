@@ -23,17 +23,17 @@ public class gameWon : MonoBehaviour
 
     public void getCounts()
     {
-        commonCount = (int) PlayerPrefs.GetFloat("Fish_com");
+        commonCount = (int) PlayerPrefs.GetFloat("Fish_comCount");
         Text common = commonText.GetComponent<Text>();
         common.text += commonCount;
-        uncommonCount = (int)PlayerPrefs.GetFloat("Fish");
+        uncommonCount = (int)PlayerPrefs.GetFloat("FishCount");
         Text uncommon = uncommonText.GetComponent<Text>();
         uncommon.text += uncommonCount;
 
-        rareCount = (int)PlayerPrefs.GetFloat("Fish_3");
+        rareCount = (int)PlayerPrefs.GetFloat("Fish_3Count");
         Text rare = rareText.GetComponent<Text>();
         rare.text += rareCount;
-        legendaryCount = (int)PlayerPrefs.GetFloat("Fish_5");
+        legendaryCount = (int)PlayerPrefs.GetFloat("Fish_5Count");
         Text legendary = legendaryText.GetComponent<Text>();
         legendary.text += legendaryCount;
     }
@@ -43,6 +43,8 @@ public class gameWon : MonoBehaviour
     }
 
     public void KeepPlaying() {
+        float timer = 0;
+        PlayerPrefs.SetFloat("Timer", timer);
         SceneManager.LoadScene("Game");
     }
 }
